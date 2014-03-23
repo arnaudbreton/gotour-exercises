@@ -116,7 +116,7 @@ func main() {
     wg.Wait()
     v2 := make(map[string]bool)
 
-    for  url, _ := range fetcher {
+    for  url := range fetcher {
         v2[url] = false
 
         for _, childUrl := range fetcher[url].urls {
@@ -126,7 +126,7 @@ func main() {
 
     v := make([]string, 0, len(fetched))
 
-    for  url, _ := range fetched {
+    for  url := range fetched {
        v = append(v, url)
     }
 
